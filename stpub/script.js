@@ -32,7 +32,7 @@ function help(){
     
         const mlim =Number.MAX_SAFE_INTEGER;
     
-        if(num>mlim) {ans="Enter a valid number";} 
+        if(num>mlim||num<1) {ans="Enter a valid number";} 
         else{
             let i=2;
         const res=[];

@@ -10,44 +10,57 @@ function help(){
 
     //window.alert("hello");
 
+    const outp= document.getElementById('outp');
+
     let str=performance.now();
+    let ans="";
 
     let num=document.getElementById("numb").value;
 
-    num=parseInt(num);
+    // console.log(typeof num);
 
-    console.log(typeof num);
-    console.log(num);
-
-    const mlim =Number.MAX_SAFE_INTEGER;
-
-    if(num>mlim) {console.log("too big ");return ;}  
-    let i=2;
-    const res=[];
-
-    while(!(num%i))
+    if(isNaN(parseInt(num)))
     {
-        res.push(i);
-        num/=i;
+        ans="Enter a valid number";
     }
-
-    for(i=3;i*i<=num;i+=2)
+    else 
     {
+        num=parseInt(num);
+
+        // console.log(typeof num);
+        // console.log(num);
+    
+        const mlim =Number.MAX_SAFE_INTEGER;
+    
+        if(num>mlim) {ans="Enter a valid number";} 
+        else{
+            let i=2;
+        const res=[];
+    
         while(!(num%i))
         {
             res.push(i);
             num/=i;
         }
+    
+        for(i=3;i*i<=num;i+=2)
+        {
+            while(!(num%i))
+            {
+                res.push(i);
+                num/=i;
+            }
+        }
+        if(num>1)res.push(num);
+    
+    
+     //   console.log(res);
+        ans=res.join(" ,");
+        let end =performance.now();
+    
+        console.log(end-str);
+        } 
     }
-    if(num>1)res.push(num);
-
-
-    console.log(res);
-
-
-
-    let end =performance.now();
-
-    console.log(end-str);
-
+    outp.textContent=("Output : "+ ans);
+   // console.log(ans);
 }

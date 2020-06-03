@@ -1,0 +1,14 @@
+{
+  "name": "nodprj",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "roro",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
